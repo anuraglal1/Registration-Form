@@ -5,6 +5,11 @@
 		$_SESSION['msg'] = "You must log in first";
 		header('location: login.php');
 	}
+	// App should ask email id also suring initialization
+	if (!isset($_SESSION['email'])) {
+		$_SESSION['msg'] = "You must log in first";
+		header('location: login.php');
+	}
 
 	if (isset($_GET['logout'])) {
 		session_destroy();
